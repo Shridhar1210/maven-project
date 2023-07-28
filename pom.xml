@@ -14,7 +14,6 @@
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
     <jacoco.version>0.8.2</jacoco.version>       
   </properties>
-
   <modules>
     <module>server</module>
     <module>webapp</module>
