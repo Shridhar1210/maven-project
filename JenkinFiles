@@ -1,0 +1,10 @@
+node{
+stage ('Build to dev')
+{
+ sh 'echo Hi Jenkin i am scritped pipeline'
+}
+stage ('Deployment to dev')
+{
+sh 'echo Hi I am deployment from Scripted'
+}
+}
