@@ -23,7 +23,7 @@ pipeline
         stage ('Deploy to Tomcat Server')
         {
             steps { sshagent(['Tomcat_PemKeyadded'])
-                { sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@3.79.32.41:/usr/share/tomcat/webapps/'         
+                { sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@3.64.63.117:/usr/share/tomcat/webapps/'         
                 
                 }
             }
