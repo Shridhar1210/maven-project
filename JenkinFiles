@@ -7,16 +7,18 @@ pipeline
             steps { sh 'echo Hi for Deployment'}
         }
         stage {"Execute Unit test and Compoent Test"}
-        parallel 
         {
-            stage ('Execute Unit Test')
-            {
-            steps { sh 'echo Execute_Unit_Test'}
+        parallel 
+            {    
+                stage ('Execute Unit Test')
+                {
+                steps { sh 'echo Execute_Unit_Test'}
+                }    
+                stage ('Execute Compoent Test')
+                {
+                steps { sh 'echo Execute_Componet_Test'}
+                }
             }
-            stage ('Execute Compoent Test')
-            {
-            steps { sh 'echo Execute_Componet_Test'}
-            }
-        } 
+        }
     }
 }
