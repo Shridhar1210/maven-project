@@ -1,0 +1,11 @@
+pipeline
+{
+agent any
+stages{
+  stage ('Run Multiple command in same stage')
+  {
+  steps { sh 'echo Hey Hi'
+          sh 'echo bye bye' }
+  }
+}
+}
