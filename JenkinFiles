@@ -1,10 +1,22 @@
-node{
-stage ('Build to dev')
+pipeline 
 {
- sh 'echo Hi Jenkin i am scritped pipeline'
-}
-stage ('Deployment to dev')
-{
-sh 'echo Hi I am deployment from Scripted'
-}
+    agent any
+    stages {
+        stage ('Print Hi for Deployment')
+        { 
+            steps { sh 'echo Hi for Deployment'}
+        }
+        stage {'Execute Unit test and Compoent Test'}
+        parallel 
+        {
+            stage ('Execute Unit Test')
+            {
+            steps { sh 'echo Execute_Unit_Test'}
+            }
+            stage ('Execute Compoent Test')
+            {
+            steps { sh 'echo Execute_Componet_Test'}
+            }
+        } 
+    }
 }
