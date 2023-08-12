@@ -6,7 +6,7 @@ pipeline
         { 
             steps { sh 'echo Hi for Deployment'}
         }
-        stage {"Execute Unit test and Compoent Test"}
+        stage ('Execute Unit test and Compoent Test')
         {
         parallel 
             {    
