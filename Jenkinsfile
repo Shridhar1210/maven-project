@@ -20,13 +20,20 @@ pipeline
                 sh 'mvn package'
             }
         }
-        stage ('Deploy to Tomcat Server')
-        {
-            steps { sshagent(['Tomcat_PemKeyadded'])
-                { sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@3.64.63.117:/usr/share/tomcat/webapps/'         
+        //stage ('Deploy to Tomcat Server')
+        //{
+            //steps { sshagent(['Tomcat_PemKeyadded'])
+              //  { sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@3.64.63.117:/usr/share/tomcat/webapps/'         
                 
-                }
-            }
-        }
+               // }
+            //}
+        //}
+        //stage ('Docker image build')
+        //{
+          //  steps 
+            //{
+                
+            //}
+        //}
 }
 }
