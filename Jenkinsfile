@@ -34,6 +34,17 @@ pipeline
             {
              sh 'docker build -t shridhar1210/tomcat:latest .'   
             }
+            
+        }
+        stage ('Docker Push')
+        {
+            steps
+            {
+                withDockerRegistry(credentialsId: 'DockerHubDetails', url: 'https://hub.docker.com/repository/docker/shridhar1210/') 
+                {
+                    sh 'docker push shridhar1210/tomcat:latest'
+                }
+            }
         }
 }
 }
