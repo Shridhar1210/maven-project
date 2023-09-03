@@ -28,12 +28,12 @@ pipeline
                // }
             //}
         //}
-        //stage ('Docker image build')
-        //{
-          //  steps 
-            //{
-                
-            //}
-        //}
+        stage ('Docker image build')
+        {
+            steps 
+            {
+             sh 'docker build -t shridhar1210/tomcat:latest .'   
+            }
+        }
 }
 }
