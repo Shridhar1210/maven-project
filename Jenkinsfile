@@ -40,7 +40,7 @@ pipeline
         {
             steps
             {
-                withDockerRegistry(credentialsId: 'DockerHubDetails', url: 'https://hub.docker.com/repository/docker/shridhar1210/') 
+                withDockerRegistry(credentialsId: 'DockerHubDetails', url: 'https://hub.docker.com/repositories/shridhar1210') 
                 {
                     sh 'docker push shridhar1210/tomcat:latest'
                 }
