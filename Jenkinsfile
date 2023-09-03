@@ -46,5 +46,17 @@ pipeline
                 }
             }
         }
+        stage ('Docker pull and run')
+        {
+            steps
+            {
+                withDockerRegistry(credentialsId: 'DockerHubDetails', url: 'https://index.docker.io/v1/')
+                {
+                sh 'docker pull shridhar1210/tomcat:latest'
+                sh 'docker run -itd -p 100002:8080 shridhar1210/tomcat:latest'
+                }
+            }
+        }
+        
 }
 }
